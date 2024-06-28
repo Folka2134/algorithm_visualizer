@@ -1,9 +1,5 @@
 import { useContext } from "react";
-import {
-  SpeedContext,
-  SpeedContextInterface,
-  SpeedContextProvider,
-} from "../context/SpeedContext";
+import { SpeedContext, SpeedContextInterface } from "../context/SpeedContext";
 
 export const useSpeedContext = (): SpeedContextInterface => {
   const context = useContext(SpeedContext);
