@@ -41,6 +41,7 @@ const Nav = () => {
             value={maze}
             options={MAZES}
             onChange={(e) => handleGenerateMaze(e.target.value as MazeType)}
+            isDisabled={isDisabeled}
           />
         </div>
       </div>
