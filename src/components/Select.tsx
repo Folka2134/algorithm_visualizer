@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 
-type SelectPropParams = {
+type SelectProp = {
   value: string | number;
   onChange: (value: ChangeEvent<HTMLSelectElement>) => void;
   options: { value: string | number; name: string }[];
@@ -14,7 +14,7 @@ const Select = ({
   options,
   label,
   isDisabled,
-}: SelectPropParams) => {
+}: SelectProp) => {
   return (
     <div className="flex flex-col items-start gap-1">
       <label className="ml-1 text-xs text-gray-300">{label}</label>
