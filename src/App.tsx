@@ -1,4 +1,5 @@
 import "./App.css";
+import { Grid } from "./components/Grid";
 import { PathfindingProvider } from "./context/PathfindingContext";
 import { SpeedContextProvider } from "./context/SpeedContext";
 import { TileContextProvider } from "./context/TilesContext";
@@ -8,7 +9,9 @@ function App() {
     <PathfindingProvider>
       <TileContextProvider>
         <SpeedContextProvider>
-          <div>test`</div>
+          <div className="flex h-screen w-screen flex-col">
+            <Grid />
+          </div>
         </SpeedContextProvider>
       </TileContextProvider>
     </PathfindingProvider>
