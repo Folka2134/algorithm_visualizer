@@ -5,7 +5,7 @@ type SelectProp = {
   onChange: (value: ChangeEvent<HTMLSelectElement>) => void;
   options: { value: string | number; name: string }[];
   label: string;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 };
 
 const Select = ({
