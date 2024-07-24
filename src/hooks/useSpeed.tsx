@@ -9,6 +9,5 @@ export const useSpeedContext = (): SpeedContextInterface => {
       "useSpeedContext must be used within the SpeedContextProvider"
     );
   }
-
   return context;
 };
