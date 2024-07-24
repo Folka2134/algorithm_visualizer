@@ -17,7 +17,14 @@ type TileProps = {
   isTraversed: boolean;
   isWall: boolean;
   isPath: boolean;
+  handleMouseUp: MouseFunction;
+  handleMouseDown: MouseFunction;
+  handleMouseEnter: MouseFunction;
 };
+
+interface MouseFunction {
+  (row: number, col: number): void;
+}
 
 const Tile = ({
   row,
@@ -27,6 +34,9 @@ const Tile = ({
   isTraversed,
   isWall,
   isPath,
+  handleMouseUp,
+  handleMouseDown,
+  handleMouseEnter,
 }: TileProps) => {
   let tileTypeStyle;
 
@@ -52,6 +62,9 @@ const Tile = ({
     <div
       className={twMerge(tileTypeStyle, borderStyle, edgeStyle)}
       id={`${row} - ${col}`}
+      onMouseUp={() => handleMouseUp(row, col)}
+      onMouseDown={() => handleMouseDown(row, col)}
+      onMouseEnter={() => handleMouseEnter(row, col)}
     />
   );
 };
