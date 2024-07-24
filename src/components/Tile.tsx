@@ -61,7 +61,7 @@ const Tile = ({
   return (
     <div
       className={twMerge(tileTypeStyle, borderStyle, edgeStyle)}
-      id={`${row} - ${col}`}
+      id={`${row}-${col}`}
       onMouseUp={() => handleMouseUp(row, col)}
       onMouseDown={() => handleMouseDown(row, col)}
       onMouseEnter={() => handleMouseEnter(row, col)}
