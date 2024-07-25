@@ -37,11 +37,12 @@ const Nav = ({
   const { speed, setSpeed } = useSpeedContext();
 
   const handleGenerateMaze = (maze: MazeType) => {
-    if (maze == "NONE") {
+    if (maze === "NONE") {
       setMaze(maze);
       resetGrid({ grid, startTile, endTile });
       return;
     }
+
     setMaze(maze);
     setIsDisabled(true);
     runMazeAlgorithm({
