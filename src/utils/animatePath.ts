@@ -25,7 +25,7 @@ export const animatePath = (
         }
       },
       SLEEP_TIME * i * SPEEDS.find((s) => s.value === speed)!.value,
-    );
+    ); // Calculate delay based on speed
   }
 
   setTimeout(
@@ -42,11 +42,11 @@ export const animatePath = (
           EXTENDED_SLEEP_TIME *
             i *
             SPEEDS.find((s) => s.value === speed)!.value,
-        );
+        ); // Calculate delay based on speed
       }
     },
     SLEEP_TIME *
       traversedTiles.length *
       SPEEDS.find((s) => s.value === speed)!.value,
-  );
+  ); // Calculate delay based on the total traversal time
 };
