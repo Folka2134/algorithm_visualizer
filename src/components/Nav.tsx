@@ -9,7 +9,7 @@ import {
   SPEEDS,
 } from "../utils/constants";
 import { resetGrid } from "../utils/resetGrid";
-import { AlgorithmType, MazeType } from "../utils/types";
+import { AlgorithmType, MazeType, SpeedType } from "../utils/types";
 import Select from "./Select";
 import { useSpeedContext } from "../hooks/useSpeed";
 import { runMazeAlgorithm } from "../utils/runMazeAlgorithm";
@@ -34,7 +34,7 @@ const Nav = ({
     setAlgorithm,
   } = usePathfinding();
   const { startTile, endTile } = useTileContext();
-  const { speed } = useSpeedContext();
+  const { speed, setSpeed } = useSpeedContext();
 
   const handleGenerateMaze = (maze: MazeType) => {
     if (maze == "NONE") {
@@ -108,6 +108,12 @@ const Nav = ({
             value={algorithm}
             options={PATHFINDING_ALGORITHMS}
             onChange={(e) => setAlgorithm(e.target.value as AlgorithmType)}
+          />
+          <Select
+            label="speed"
+            value={speed}
+            options={SPEEDS}
+            onChange={(e) => setSpeed(parseInt(e.target.value) as SpeedType)}
           />
           <PlayButton
             isDisabled={isDisabeled}
