@@ -1,19 +1,9 @@
-import { transform } from "typescript";
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       keyframes: {
-        wall: {
-          "0%": {
-            transform: "scale(0.7)",
-          },
-          "100%": {
-            transform: "scale(1)",
-          },
-        },
         traversed: {
           "0%": {
             transform: "scale(0.3)",
@@ -47,7 +37,15 @@ export default {
           },
           "90%": {
             transform: "scale(0.8)",
-            backgroundColor: "fde68a",
+            backgroundColor: "#fde68a",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
+        wall: {
+          "0%": {
+            transform: "scale(0.7)",
           },
           "100%": {
             transform: "scale(1)",
@@ -55,9 +53,9 @@ export default {
         },
       },
       animation: {
-        traversed: "traversed 0.5s cubic-bezier(0,0,0.2,1)",
-        path: "path 1.5s cubic-bezier(0,0,0.2,1)",
-        wall: "wall 0.3s cubic-bezier(0.4,0,0.2,1)",
+        traversed: "traversed 0.5s cubic-bezier(0, 0, 0.2, 1)",
+        path: "path 1.5s cubic-bezier(0, 0, 0.2, 1)",
+        wall: "wall 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
       },
     },
   },
