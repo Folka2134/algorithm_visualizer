@@ -14,8 +14,8 @@ import Select from "./Select";
 import { useSpeedContext } from "../hooks/useSpeed";
 import { runMazeAlgorithm } from "../utils/runMazeAlgorithm";
 import { runPathFindingAlgorithm } from "../utils/runPathFindingAlgorithm";
-import PlayButton from "./PlayButton";
 import { animatePath } from "../utils/animatePath";
+import { PlayButton } from "./PlayButton ";
 
 const Nav = ({
   isVisualizationRunningRef,
