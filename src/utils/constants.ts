@@ -47,10 +47,6 @@ export const PATHFINDING_ALGORITHMS: AlgorithmSelectType[] = [
     value: "DIJKSTRA",
   },
   {
-    name: "A-STAR",
-    value: "A_STAR",
-  },
-  {
     name: "Breadth First Search",
     value: "BFS",
   },
