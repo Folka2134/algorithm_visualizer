@@ -7,39 +7,44 @@ export const dijkstra = (
   startTile: TileType,
   endTile: TileType,
 ) => {
-  const traversedTiles = [];
-  const base = grid[startTile.row][startTile.col];
-  base.distance = 0;
-  base.isTraversed = true;
-  const unTraversedTiles = [base];
+  const traversedTiles = []; // Initialize an array to store traversed tiles
+  const base = grid[startTile.row][startTile.col]; // Get the start tile from the grid
+  base.distance = 0; // Set the distance of the start tile to 0
+  base.isTraversed = true; // Mark the start tile as traversed
+  const untraversedTiles = [base]; // Initialize the queue with the start tile
 
-  while (unTraversedTiles.length > 0) {
-    unTraversedTiles.sort((a, b) => a.distance - b.distance);
-    const currentTile = unTraversedTiles.shift();
+  while (untraversedTiles.length > 0) {
+    // Continue while there are untraversed tiles
+    untraversedTiles.sort((a, b) => a.distance - b.distance); // Sort the queue by distance
+    const currentTile = untraversedTiles.shift(); // Get the tile with the smallest distance
     if (currentTile) {
-      if (currentTile.isWall) continue;
-      if (currentTile.distance == Infinity) break;
-      currentTile.isTraversed = true;
-      traversedTiles.push(currentTile);
-      if (isEqual(currentTile, endTile)) break;
-      const neightbours = getUntraversedNeighbours(grid, currentTile);
-      for (let i = 0; i < neightbours.length; i++) {
-        if (currentTile.distance + 1 < neightbours[i].distance) {
-          dropFromQueue(neightbours[i], unTraversedTiles);
-          neightbours[i].distance = currentTile.distance + 1;
-          neightbours[i].parent = currentTile;
-          unTraversedTiles.push(neightbours[i]);
+      // If the current tile is valid
+      if (currentTile.isWall) continue; // Skip if the tile is a wall
+      if (currentTile.distance === Infinity) break; // Break if the tile's distance is infinity
+      currentTile.isTraversed = true; // Mark the tile as traversed
+      traversedTiles.push(currentTile); // Add the tile to the traversed tiles array
+      if (isEqual(currentTile, endTile)) break; // Break if the tile is the end tile
+      const neighbors = getUntraversedNeighbours(grid, currentTile); // Get untraversed neighbors of the tile
+      for (let i = 0; i < neighbors.length; i += 1) {
+        // Iterate through each neighbor
+        if (currentTile.distance + 1 < neighbors[i].distance) {
+          // Check if a shorter path is found
+          dropFromQueue(neighbors[i], untraversedTiles); // Remove the neighbor from the queue
+          neighbors[i].distance = currentTile.distance + 1; // Update the neighbor's distance
+          neighbors[i].parent = currentTile; // Set the neighbor's parent to the current tile
+          untraversedTiles.push(neighbors[i]); // Add the neighbor to the queue
         }
       }
     }
   }
-  const path = [];
-  let current = grid[endTile.row][endTile.col];
 
-  while (current != null) {
-    current.isPath = true;
-    path.unshift(current);
-    current = current.parent!;
+  const path = []; // Initialize an array to store the path
+  let current = grid[endTile.row][endTile.col]; // Start from the end tile
+  while (current !== null) {
+    // Backtrack until the start tile
+    current.isPath = true; // Mark the tile as part of the path
+    path.unshift(current); // Add the tile to the path
+    current = current.parent!; // Move to the parent tile
   }
-  return { traversedTiles, path };
+  return { traversedTiles, path }; // Return the traversed tiles and the path
 };
