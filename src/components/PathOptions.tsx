@@ -17,7 +17,7 @@ import { runPathFindingAlgorithm } from "../utils/runPathFindingAlgorithm";
 import { animatePath } from "../utils/animatePath";
 import { PlayButton } from "./PlayButton ";
 
-const Nav = ({
+const PathOptions = ({
   isVisualizationRunningRef,
 }: {
   isVisualizationRunningRef: MutableRefObject<boolean>;
@@ -127,4 +127,4 @@ const Nav = ({
   );
 };
 
-export default Nav;
+export default PathOptions;
