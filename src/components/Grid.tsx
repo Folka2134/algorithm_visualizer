@@ -44,44 +44,46 @@ export function Grid({
   };
 
   return (
-    <div
-      className={twMerge(
-        // base layout
-        "mt-10 flex flex-col items-center justify-center",
-        // layout height
-        `lg:min-h-[${MAX_ROWS * 17}px] md:min-h-[${
-          MAX_ROWS * 15
-        }px] xs:min-h-[${MAX_ROWS * 8}px] min-h-[${MAX_ROWS * 7}px]`,
-        // layout width
-        `lg:w-[${MAX_COLS * 17}px] md:w-[${MAX_COLS * 15}px] xs:w-[${
-          MAX_COLS * 8
-        }px] w-[${MAX_COLS * 7}px]`,
-      )}
-    >
-      {grid.map((r, rowIndex) => (
-        <div key={rowIndex} className="flex">
-          {r.map((tile, tileIndex) => {
-            const { row, col, isStart, isEnd, isPath, isTraversed, isWall } =
-              tile;
+    <div className="flex items-center justify-center">
+      <div
+        className={twMerge(
+          // base layout
+          "mt-10 flex flex-col items-center justify-center",
+          // layout height
+          `lg:min-h-[${MAX_ROWS * 17}px] md:min-h-[${
+            MAX_ROWS * 15
+          }px] xs:min-h-[${MAX_ROWS * 8}px] min-h-[${MAX_ROWS * 7}px]`,
+          // layout width
+          `lg:w-[${MAX_COLS * 17}px] md:w-[${MAX_COLS * 15}px] xs:w-[${
+            MAX_COLS * 8
+          }px] w-[${MAX_COLS * 7}px]`,
+        )}
+      >
+        {grid.map((r, rowIndex) => (
+          <div key={rowIndex} className="flex">
+            {r.map((tile, tileIndex) => {
+              const { row, col, isStart, isEnd, isPath, isTraversed, isWall } =
+                tile;
 
-            return (
-              <Tile
-                key={tileIndex}
-                row={tile.row}
-                col={tile.col}
-                isStart={isStart}
-                isEnd={isEnd}
-                isPath={isPath}
-                isTraversed={isTraversed}
-                isWall={isWall}
-                handleMouseDown={() => handleMouseDown(row, col)}
-                handleMouseUp={() => handleMouseUp(row, col)}
-                handleMouseEnter={() => handleMouseEnter(row, col)}
-              />
-            );
-          })}
-        </div>
-      ))}
+              return (
+                <Tile
+                  key={tileIndex}
+                  row={tile.row}
+                  col={tile.col}
+                  isStart={isStart}
+                  isEnd={isEnd}
+                  isPath={isPath}
+                  isTraversed={isTraversed}
+                  isWall={isWall}
+                  handleMouseDown={() => handleMouseDown(row, col)}
+                  handleMouseUp={() => handleMouseUp(row, col)}
+                  handleMouseEnter={() => handleMouseEnter(row, col)}
+                />
+              );
+            })}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
