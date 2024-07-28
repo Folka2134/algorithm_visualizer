@@ -114,7 +114,7 @@ const Nav = ({
             label="speed"
             value={speed}
             options={SPEEDS}
-            onChange={(e) => setSpeed(parseInt(e.target.value) as SpeedType)}
+            onChange={(e) => setSpeed(parseFloat(e.target.value) as SpeedType)}
           />
           <PlayButton
             isDisabled={isDisabeled}
