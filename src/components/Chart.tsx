@@ -1,4 +1,4 @@
-import { FaPlayCircle } from "react-icons/fa";
+import { FaArrowLeft, FaPlayCircle } from "react-icons/fa";
 import { RxReset } from "react-icons/rx";
 import { useSortingAlgorithmContext } from "../context/SortingContext";
 import { SortingAlgorithmType } from "../utils/types";
@@ -6,6 +6,7 @@ import { generateAnimationArray } from "../utils/helpers";
 import { Slider } from "./Slider";
 import { algorithmOptions, sortingAlgorithmsData } from "../utils/constants";
 import { SortingSelect } from "./SortingSelect";
+import { Link } from "react-router-dom";
 
 export default function Chart() {
   const {
@@ -46,6 +47,11 @@ export default function Chart() {
           className="flex w-full max-w-[1020px] flex-col px-4 lg:px-0"
         >
           <div className="relative flex h-[66px] w-full items-center justify-between">
+            <button className="mr-8 text-white">
+              <Link to="/">
+                <FaArrowLeft size={24} />
+              </Link>
+            </button>
             <h1 className="hidden text-2xl font-light text-gray-300 md:flex">
               Sorting Visulizer
             </h1>
