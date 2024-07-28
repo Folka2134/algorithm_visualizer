@@ -2,8 +2,8 @@ import { createContext, useState } from "react";
 import { SortingAlgorithmType } from "../utils/types";
 
 export interface SortingContextInterface {
-  unsortedArray: number[];
-  setUnsortedArray: (array: number[]) => void;
+  arrayToSort: number[];
+  setArrayToSort: (array: number[]) => void;
   algorithm: SortingAlgorithmType;
   setAlgorithm: (algorithm: SortingAlgorithmType) => void;
   isSorting: boolean;
@@ -24,7 +24,7 @@ export const SortingContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [unsortedArray, setUnsortedArray] = useState<number[]>([]);
+  const [arrayToSort, setArrayToSort] = useState<number[]>([]);
   const [algorithm, setAlgorithm] = useState<SortingAlgorithmType>("BUBBLE");
   const [isSorting, setIsSorting] = useState<boolean>(false);
   const [isAnimationComplete, setAnimationComplete] = useState<boolean>(false);
@@ -35,8 +35,8 @@ export const SortingContextProvider = ({
   const runAnimation = () => {};
 
   const value = {
-    unsortedArray,
-    setUnsortedArray,
+    arrayToSort,
+    setArrayToSort,
     algorithm,
     setAlgorithm,
     isSorting,
