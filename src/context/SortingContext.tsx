@@ -12,6 +12,7 @@ export interface SortingContextInterface {
   setAnimationComplete: (isAnimationComplete: boolean) => void;
   resetArray: () => void;
   runAnimation: () => void;
+  animationSpeed: number;
 }
 
 export const SortingContext = createContext<
@@ -44,6 +45,8 @@ export const SortingContextProvider = ({
     setAnimationComplete,
     resetArray,
     runAnimation,
+    animationSpeed,
+    setAnimationSpeed,
   };
 
   return (
