@@ -1,8 +1,4 @@
-import React from "react";
-import {
-  SortingContext,
-  SortingContextProvider,
-} from "../context/SortingContext";
+import { SortingContextProvider } from "../context/SortingContext";
 
 const Sorter = () => {
   return (
