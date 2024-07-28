@@ -1,25 +1,16 @@
-import { useRef } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
-import { Grid } from "./components/Grid";
-import { PathfindingProvider } from "./context/PathfindingContext";
-import { SpeedContextProvider } from "./context/SpeedContext";
-import { TileContextProvider } from "./context/TilesContext";
-import Nav from "./components/Nav";
 
 function App() {
-  const isVisualizationRunningRef = useRef(false);
-
   return (
-    <PathfindingProvider>
-      <TileContextProvider>
-        <SpeedContextProvider>
-          <div className="flex h-screen w-screen flex-col bg-black">
-            <Nav isVisualizationRunningRef={isVisualizationRunningRef} />
-            <Grid isVisualizationRunningRef={isVisualizationRunningRef} />
-          </div>
-        </SpeedContextProvider>
-      </TileContextProvider>
-    </PathfindingProvider>
+    <div>
+      <button>
+        <Link to="/pather">Path Finder</Link>
+      </button>
+      <button>
+        <Link to="/sorter">Bar sorter</Link>
+      </button>
+    </div>
   );
 }
 
