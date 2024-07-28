@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="flex h-screen w-screen flex-col bg-black text-white">
       <button>
         <Link to="/pather">Path Finder</Link>
       </button>

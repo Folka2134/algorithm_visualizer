@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import PathFinder from "./components/PathFinder.tsx";
 
 import "./index.css";
+import Sorter from "./components/Sorter.tsx";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/sorter",
-    element: <PathFinder />,
+    element: <Sorter />,
   },
 ]);
 
