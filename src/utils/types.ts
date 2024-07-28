@@ -29,3 +29,9 @@ export interface SpeedSelectType {
   name: string;
   value: SpeedType;
 }
+
+export type SortingAlgorithmType = "BUBBLE" | "QUICK" | "MERGE";
+export interface SortingAlgorithmTypeSelectType {
+  name: string;
+  value: SortingAlgorithmType;
+}
