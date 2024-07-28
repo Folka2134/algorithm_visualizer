@@ -1,12 +1,15 @@
-import { SortingContextProvider } from "../context/SortingContext";
+import { SortingAlgorithmProvider } from "../context/SortingContext";
+import Chart from "./Chart";
+import SortOptions from "./SortOptions";
 
 const Sorter = () => {
   return (
-    <SortingContextProvider>
+    <SortingAlgorithmProvider>
       <div className="flex h-screen w-screen flex-col bg-black">
         {/* <SortOptions /> */}
+        <Chart />
       </div>
-    </SortingContextProvider>
+    </SortingAlgorithmProvider>
   );
 };
 
