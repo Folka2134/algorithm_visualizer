@@ -93,15 +93,15 @@ const PathOptions = ({
   };
 
   return (
-    <div className="flex min-h-[4.5rem] items-center justify-center border-b px-0 shadow-gray-600 sm:px-5">
-      <div className="flex w-full items-center justify-center sm:w-[52rem] lg:justify-between">
+    <div className="flex min-h-[4.5rem] items-center justify-center px-0 shadow-gray-600 sm:px-5">
+      <div className="flex h-full w-full items-center justify-evenly sm:w-[52rem]">
         <button className="mr-8 text-white lg:mr-4">
           <Link to="/">
             <FaArrowLeft size={24} />
           </Link>
         </button>
-        <h1 className="hidden w-[40%] pl-1 text-3xl text-white lg:flex">
-          Pathfinder
+        <h1 className="hidden text-2xl font-light text-gray-300 md:flex">
+          Pathfinding Visualizer
         </h1>
         <div className="flex flex-col items-center justify-between space-y-3 py-4 sm:flex-row sm:items-end sm:justify-start sm:space-x-4 sm:space-y-0 sm:py-0">
           <Select
@@ -123,12 +123,12 @@ const PathOptions = ({
             options={SPEEDS}
             onChange={(e) => setSpeed(parseFloat(e.target.value) as SpeedType)}
           />
-          <PlayButton
-            isDisabled={isDisabeled}
-            isGraphVisualized={isGraphVisualized}
-            handlerRunVisualizer={handleRunVisualizer}
-          />
         </div>
+        <PlayButton
+          isDisabled={isDisabeled}
+          isGraphVisualized={isGraphVisualized}
+          handlerRunVisualizer={handleRunVisualizer}
+        />
       </div>
     </div>
   );
