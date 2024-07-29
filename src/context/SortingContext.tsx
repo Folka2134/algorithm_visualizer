@@ -1,15 +1,9 @@
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 import { AnimationArrayType, SortingAlgorithmType } from "../utils/types";
 import { MAX_ANIMATION_SPEED } from "../utils/constants";
 import { getRandInt } from "../utils/helpers";
 
-interface SortingAlgorithmContextType {
+export interface SortingAlgorithmContextInterface {
   arrayToSort: number[];
   selectedAlgorithm: SortingAlgorithmType;
   isSorting: boolean;
@@ -23,8 +17,8 @@ interface SortingAlgorithmContextType {
   requiresReset: boolean;
 }
 
-const SortingAlgorithmContext = createContext<
-  SortingAlgorithmContextType | undefined
+export const SortingAlgorithmContext = createContext<
+  SortingAlgorithmContextInterface | undefined
 >(undefined);
 
 export const SortingAlgorithmProvider = ({
@@ -171,14 +165,4 @@ export const SortingAlgorithmProvider = ({
       {children}
     </SortingAlgorithmContext.Provider>
   );
-};
-
-export const useSortingAlgorithmContext = (): SortingAlgorithmContextType => {
-  const context = useContext(SortingAlgorithmContext);
-  if (context === undefined) {
-    throw new Error(
-      "useSortingAlgorithmContext must be used within a SortingAlgorithmProvider",
-    );
-  }
-  return context;
 };

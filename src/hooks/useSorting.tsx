@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import {
-  SortingContext,
-  SortingContextInterface,
+  SortingAlgorithmContext,
+  SortingAlgorithmContextInterface,
 } from "../context/SortingContext";
 
-export const useSortingContext = (): SortingContextInterface => {
-  const context = useContext(SortingContext);
-
-  if (!context) {
-    throw new Error(
-      "useSortingContext must be used within the SortingContextProvider",
-    );
-  }
-  return context;
-};
+export const useSortingAlgorithmContext =
+  (): SortingAlgorithmContextInterface => {
+    const context = useContext(SortingAlgorithmContext);
+    if (context === undefined) {
+      throw new Error(
+        "useSortingAlgorithmContext must be used within a SortingAlgorithmProvider",
+      );
+    }
+    return context;
+  };

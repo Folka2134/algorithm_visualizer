@@ -1,12 +1,12 @@
 import { FaArrowLeft, FaPlayCircle } from "react-icons/fa";
 import { RxReset } from "react-icons/rx";
-import { useSortingAlgorithmContext } from "../context/SortingContext";
 import { SortingAlgorithmType } from "../utils/types";
 import { Slider } from "./Slider";
 import { algorithmOptions, sortingAlgorithmsData } from "../utils/constants";
 import { SortingSelect } from "./SortingSelect";
 import { Link } from "react-router-dom";
 import { runSortingAlgorithm } from "../utils/runSortingAlgorithm";
+import { useSortingAlgorithmContext } from "../hooks/useSorting";
 
 export default function Chart() {
   const {
