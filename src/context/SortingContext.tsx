@@ -7,7 +7,7 @@ import {
 } from "react";
 import { AnimationArrayType, SortingAlgorithmType } from "../utils/types";
 import { MAX_ANIMATION_SPEED } from "../utils/constants";
-import { generateRandomNumberFromInterval } from "../utils/helpers";
+import { getRandInt } from "../utils/helpers";
 
 interface SortingAlgorithmContextType {
   arrayToSort: number[];
@@ -61,7 +61,7 @@ export const SortingAlgorithmProvider = ({
     const containerHeight = window.innerHeight;
     const maxLineHeight = Math.max(containerHeight - 420, 100);
     for (let i = 0; i < numLines; i++) {
-      tempArray.push(generateRandomNumberFromInterval(35, maxLineHeight));
+      tempArray.push(getRandInt(35, maxLineHeight));
     }
 
     setArrayToSort(tempArray);
