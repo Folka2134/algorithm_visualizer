@@ -2,11 +2,11 @@ import { FaArrowLeft, FaPlayCircle } from "react-icons/fa";
 import { RxReset } from "react-icons/rx";
 import { useSortingAlgorithmContext } from "../context/SortingContext";
 import { SortingAlgorithmType } from "../utils/types";
-import { generateAnimationArray } from "../utils/helpers";
 import { Slider } from "./Slider";
 import { algorithmOptions, sortingAlgorithmsData } from "../utils/constants";
 import { SortingSelect } from "./SortingSelect";
 import { Link } from "react-router-dom";
+import { runSortingAlgorithm } from "../utils/runSortingAlgorithm";
 
 export default function Chart() {
   const {
@@ -31,7 +31,7 @@ export default function Chart() {
       return;
     }
 
-    generateAnimationArray(
+    runSortingAlgorithm(
       selectedAlgorithm,
       isSorting,
       arrayToSort,
