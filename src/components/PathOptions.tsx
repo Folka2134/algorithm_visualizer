@@ -119,12 +119,14 @@ const PathOptions = ({
             value={algorithm}
             options={PATHFINDING_ALGORITHMS}
             onChange={(e) => setAlgorithm(e.target.value as AlgorithmType)}
+            isDisabled={isDisabeled}
           />
           <Select
             label="speed"
             value={speed}
             options={SPEEDS}
             onChange={(e) => setSpeed(parseFloat(e.target.value) as SpeedType)}
+            isDisabled={isDisabeled}
           />
         </div>
         <PlayButton
