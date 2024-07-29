@@ -27,6 +27,7 @@ export const resetGrid = ({
       tile.isPath = false;
       tile.parent = null;
       tile.isWall = false;
+
       if (!isEqual(startTile, tile) && !isEqual(endTile, tile)) {
         const tileElement = document.getElementById(`${tile.row}-${tile.col}`);
 
@@ -34,11 +35,11 @@ export const resetGrid = ({
           tileElement.className = TILE_STYLE;
         }
 
-        if (tile.row == MAX_ROWS - 1) {
+        if (tile.row === MAX_ROWS - 1) {
           tileElement?.classList.add("border-b");
         }
 
-        if (tile.col == 0) {
+        if (tile.col === 0) {
           tileElement?.classList.add("border-l");
         }
       }
