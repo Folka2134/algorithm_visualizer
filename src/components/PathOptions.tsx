@@ -93,8 +93,8 @@ const PathOptions = ({
   };
 
   return (
-    <div className="flex min-h-[4.5rem] items-center justify-center px-0 shadow-gray-600 sm:px-5">
-      <div className="flex h-full w-full items-center justify-evenly sm:w-[52rem]">
+    <div className="flex min-h-[4.5rem] w-full max-w-[1020px] flex-col items-center justify-center px-4 shadow-gray-600 sm:px-5 lg:px-0">
+      <div className="relative flex w-full items-center justify-evenly md:justify-between">
         <button className="mr-8 text-white lg:mr-4">
           <Link to="/">
             <FaArrowLeft size={24} />

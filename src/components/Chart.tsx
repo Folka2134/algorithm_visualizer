@@ -40,7 +40,7 @@ export default function Chart() {
   };
 
   return (
-    <main className="absolute top-0 h-screen w-screen bg-[radial-gradient(#ffffff33_1px,#150229_1px)] bg-[size:40px_40px] text-white">
+    <main className="absolute top-0 h-screen w-screen text-white">
       <div className="flex h-full justify-center">
         <div
           id="content-container"

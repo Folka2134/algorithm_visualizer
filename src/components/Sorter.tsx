@@ -1,12 +1,10 @@
 import { SortingAlgorithmProvider } from "../context/SortingContext";
 import Chart from "./Chart";
-import SortOptions from "./SortOptions";
 
 const Sorter = () => {
   return (
     <SortingAlgorithmProvider>
-      <div className="flex h-screen w-screen flex-col bg-black">
-        {/* <SortOptions /> */}
+      <div className="flex h-screen w-screen flex-col bg-[radial-gradient(#ffffff33_1px,#150229_1px)] bg-[size:40px_40px]">
         <Chart />
       </div>
     </SortingAlgorithmProvider>
