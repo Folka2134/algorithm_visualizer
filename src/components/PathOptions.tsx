@@ -43,6 +43,9 @@ const PathOptions = ({
       setMaze(maze);
       resetGrid({ grid, startTile, endTile });
       return;
+    } else {
+      setMaze(maze);
+      resetGrid({ grid, startTile, endTile });
     }
 
     setMaze(maze);
@@ -127,7 +130,7 @@ const PathOptions = ({
         <PlayButton
           isDisabled={isDisabeled}
           isGraphVisualized={isGraphVisualized}
-          handlerRunVisualizer={handleRunVisualizer}
+          handleRunVisualizer={handleRunVisualizer}
         />
       </div>
     </div>
