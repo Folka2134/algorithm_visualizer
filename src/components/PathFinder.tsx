@@ -12,7 +12,7 @@ const PathFinder = () => {
     <PathfindingProvider>
       <TileContextProvider>
         <SpeedContextProvider>
-          <div className="flex h-screen w-screen flex-col items-center bg-[radial-gradient(#ffffff33_1px,#150229_1px)] bg-[size:40px_40px]">
+          <div className="flex h-screen w-screen flex-col items-center bg-[radial-gradient(#ffffff33_1px,#121212_1px)] bg-[size:40px_40px]">
             <PathOptions
               isVisualizationRunningRef={isVisualizationRunningRef}
             />
