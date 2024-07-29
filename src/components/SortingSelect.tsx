@@ -13,7 +13,7 @@ export const SortingSelect = ({
   isDisabled?: boolean;
 }) => {
   return (
-    <div className="relative inline-block w-48">
+    <div className="relative inline-block w-48 cursor-pointer">
       <select
         disabled={isDisabled}
         onChange={onChange}
