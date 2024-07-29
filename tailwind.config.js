@@ -7,19 +7,19 @@ export default {
         traversed: {
           "0%": {
             transform: "scale(0.3)",
-            backgroundColor: "#9333eabf",
+            backgroundColor: "#BC9CE8",
             borderRadius: "100%",
           },
           "50%": {
-            backgroundColor: "#4f46e5bf",
+            backgroundColor: "#5D4FE8",
           },
           "75%": {
             transform: "scale(1.2)",
-            backgroundColor: "#3b82f6bf",
+            backgroundColor: "#5D4FE8",
           },
           "100%": {
             transform: "scale(1)",
-            backgroundColor: "#22d3ee",
+            backgroundColor: "#9050e9",
           },
         },
         path: {
