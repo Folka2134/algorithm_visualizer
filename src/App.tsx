@@ -13,7 +13,7 @@ function App() {
             <img
               src="src/assets/pathfinder_preview.png"
               alt="path finder preview"
-              className="transition-transform duration-100 group-hover:scale-105"
+              className="transition-transform duration-200 group-hover:scale-105"
             />
           </div>
         </Link>
@@ -27,7 +27,7 @@ function App() {
             <img
               src="src/assets/sorter_preview.png"
               alt="path finder preview"
-              className="transition-transform duration-100 group-hover:scale-105"
+              className="transition-transform duration-200 group-hover:scale-105"
             />
           </div>
         </Link>
