@@ -115,7 +115,7 @@ const PathOptions = ({
             isDisabled={isDisabeled}
           />
           <Select
-            label="graph"
+            label="path"
             value={algorithm}
             options={PATHFINDING_ALGORITHMS}
             onChange={(e) => setAlgorithm(e.target.value as AlgorithmType)}
