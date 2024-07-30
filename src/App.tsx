@@ -11,7 +11,7 @@ function App() {
               Path Finder
             </h3>
             <img
-              src="public/pathfinder_preview.png"
+              src="/pathfinder_preview.png"
               alt="path finder preview"
               className="transition-transform duration-200 group-hover:scale-105"
             />
@@ -25,7 +25,7 @@ function App() {
               Bar sorter
             </h3>
             <img
-              src="public/sorter_preview.png"
+              src="/sorter_preview.png"
               alt="path finder preview"
               className="transition-transform duration-200 group-hover:scale-105"
             />
